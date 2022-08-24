@@ -20,6 +20,7 @@
         .input_color{
             color: black;
         }
+
     </style>
 
   </head>
@@ -33,14 +34,19 @@
           <div class="main-panel">
             <div class="content-wrapper">
 
-                @if(session()->has('message'))
+                @if(session()->has('success'))
                     <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                        {{session()->get('message')}}
+                        {{session()->get('success')}}
+                    </div>
+                @elseif(session()->has('danger'))
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        {{session()->get('danger')}}
                     </div>
                 @endif
                 
-                <div class="div_center">
+                <div class="div_center" style="margin-bottom: 30px">
                     <h2 class="h2_font">Add Category</h2>
 
                     <form action="{{url('/add_category')}}" method="POST">
@@ -49,6 +55,26 @@
                         <input type="submit" value="Add Category" class="btn btn-primary" name="submit">
                     </form>
                 </div>
+                <table class="table m-auto font-monospace w-50 text-center">
+                    <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Catgeory Name</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($categories as $category)             
+                      <tr>
+                        <th scope="row">{{$category->id}}</th>
+                        <td>{{$category->category_name}}</td>
+                        <td>
+                            <a href="{{url('/delete_category', $category->id)}}" class="btn btn-danger">Delete</a>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
             </div>
         </div>
       </div>

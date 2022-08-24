@@ -9,7 +9,9 @@ class AdminController extends Controller
 {
     public function view_category()
     {
-        return view('admin.category');
+        $categories = Category::all();
+
+        return view('admin.category', compact('categories'));
     }
 
     public function add_category(Request $request)
@@ -18,6 +20,12 @@ class AdminController extends Controller
             'category_name' => $request->category_name,
         ]);
 
-        return redirect()->back()->with('message', 'Category Added Successfully');
+        return redirect()->back()->with('success', 'Category Added Successfully');
+    }
+
+    public function delete_category($id)
+    {
+        Category::where('id', $id)->delete();
+        return redirect()->back()->with('danger', 'Category Deleted Successfully');
     }
 }

@@ -25,16 +25,15 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::controller(AdminController::class)->group(function () {
-
-    Route::get('/view_category', 'view_category');
-    Route::post('/add_category', 'add_category');
-
-});
-
 Route::controller(HomeController::class)->group(function () {
 
     Route::get('/', 'index');
     Route::post('/redirect', 'redirect');
 
+});
+Route::controller(AdminController::class)->group(function () {
+
+    Route::get('/view_category', 'view_category');
+    Route::post('/add_category', 'add_category');
+    Route::get('/delete_category/{id}', 'delete_category');
 });
