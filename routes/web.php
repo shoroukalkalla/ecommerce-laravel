@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, 'index']);
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -27,6 +25,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/redirect', [HomeController::class, 'redirect']);
-Route::get('/view_category', [AdminController::class, 'view_category']);
-Route::post('/add_category', [AdminController::class, 'add_category']);
+Route::controller(AdminController::class)->group(function () {
+
+    Route::get('/view_category', 'view_category');
+    Route::post('/add_category', 'add_category');
+
+});
+
+Route::controller(HomeController::class)->group(function () {
+
+    Route::get('/', 'index');
+    Route::post('/redirect', 'redirect');
+
+});
