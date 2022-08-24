@@ -52,6 +52,6 @@ class AdminController extends Controller
             'image' => $imagename,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Product created successfully');
     }
 }
