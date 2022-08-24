@@ -26,14 +26,15 @@ Route::middleware([
 });
 
 Route::controller(HomeController::class)->group(function () {
-
     Route::get('/', 'index');
-    Route::post('/redirect', 'redirect');
-
+    Route::get('/redirect', 'redirect');
 });
-Route::controller(AdminController::class)->group(function () {
 
-    Route::get('/view_category', 'view_category');
-    Route::post('/add_category', 'add_category');
-    Route::get('/delete_category/{id}', 'delete_category');
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/view_category', 'view_category')->name('view_category');
+    Route::post('/add_category', 'add_category')->name('add_category');
+    Route::get('/delete_category/{id}', 'delete_category')->name('delete_category');
+
+    Route::get('/view_product', 'view_product')->name('view_product');
+    Route::post('/add_product', 'add_product')->name('add_product');
 });

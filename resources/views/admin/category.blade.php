@@ -1,6 +1,3 @@
-{{-- <x-app-layout>
-</x-app-layout> --}}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,7 +46,7 @@
                 <div class="div_center" style="margin-bottom: 30px">
                     <h2 class="h2_font">Add Category</h2>
 
-                    <form action="{{url('/add_category')}}" method="POST">
+                    <form action="{{route('add_category')}}" method="POST">
                         @csrf
                         <input type="text" placeholder="Enter category name" name="category_name" class="input_color">
                         <input type="submit" value="Add Category" class="btn btn-primary" name="submit">
@@ -69,7 +66,7 @@
                         <th scope="row">{{$category->id}}</th>
                         <td>{{$category->category_name}}</td>
                         <td>
-                            <a href="{{url('/delete_category', $category->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{route('delete_category', $category->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                       </tr>
                       @endforeach
