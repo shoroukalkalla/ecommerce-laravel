@@ -52,12 +52,12 @@
                         <input type="submit" value="Add Category" class="btn btn-primary" name="submit">
                     </form>
                 </div>
-                <table class="table m-auto font-monospace w-50 text-center">
+                <table class="table m-auto font-monospace w-50 text-center text-light">
                     <thead>
                         <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Catgeory Name</th>
-                          <th scope="col">Action</th>
+                          <th scope="col" class="text-warning" >ID</th>
+                          <th scope="col" class="text-warning" >Catgeory Name</th>
+                          <th scope="col" class="text-warning" >Action</th>
                         </tr>
                     </thead>
                     <tbody>

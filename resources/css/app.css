@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav.bg-white {
+    background: none !important;
+    border: none !important;
+}
+
+.table th img, .jsgrid .jsgrid-table th img, .table td img, .jsgrid .jsgrid-table td img{
+    width: 150px;
+    height: 150px;
+    border-radius:0%;
+}
