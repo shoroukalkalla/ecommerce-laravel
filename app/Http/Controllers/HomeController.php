@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home.userpage');
+        $products = Product::paginate(3);
+        return view('home.userpage', compact('products'));
     }
 
     public function redirect()
@@ -19,7 +21,7 @@ class HomeController extends Controller
         if ($userType == '1') {
             return view('admin.home');
         } else {
-            return view('home.userpage');
-        }
+            $products = Product::paginate(3);
+            return view('home.userpage', compact('products'));}
     }
 }

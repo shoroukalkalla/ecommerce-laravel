@@ -41,5 +41,4 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/edit_product/{id}', 'edit_product')->name('edit_product');
     Route::post('/update_product/{id}', 'update_product')->name('update_product');
     Route::get('/delete_product/{id}', 'delete_product')->name('delete_product');
-
 });

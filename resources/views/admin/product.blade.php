@@ -47,7 +47,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Product Image: </label>
-                            <input class="form-control input_color" type="file" name="image">
+                            <input class="form-control file_input_color" type="file" name="image">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Product Category: </label>
