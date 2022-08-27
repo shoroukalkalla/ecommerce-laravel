@@ -3,23 +3,6 @@
   <head>
     @include('admin.css')
 
-    <style>
-        .div_center{
-            text-align: center;
-            padding top:40px ;
-        }
-
-        .h2_font{
-            font-size: 40px;
-            padding-bottom: 40px;
-        }
-
-        .input_color{
-            color: black;
-        }
-
-    </style>
-
   </head>
   <body>
     <div class="container-scroller">

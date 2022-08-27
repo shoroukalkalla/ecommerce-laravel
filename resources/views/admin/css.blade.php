@@ -18,3 +18,25 @@
 <link rel="stylesheet" href="admin/assets/css/style.css">
 <!-- End layout styles -->
 <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+
+<style>
+    .div_center{
+         text-align: center;
+         padding top:40px ;
+     }
+     .h2_font{
+         font-size: 40px;
+         padding-bottom: 40px;
+     }
+     .input_color{
+            color: black;
+        }
+    .file_input_color{
+            color:white;
+        }
+    .img_size{
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+ </style>

@@ -38,4 +38,6 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/view_product', 'view_product')->name('view_product');
     Route::post('/add_product', 'add_product')->name('add_product');
     Route::get('/show_product', 'show_product')->name('show_product');
+    Route::get('/edit_product/{id}', 'edit_product')->name('edit_product');
+    Route::post('/update_product/{id}', 'update_product')->name('update_product');
 });
