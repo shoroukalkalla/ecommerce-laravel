@@ -12,6 +12,14 @@
 
         <div class="main-panel">
           <div class="content-wrapper">
+
+            @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        {{session()->get('success')}}
+                    </div>
+                @endif
+                
             <div class="div_center" style="margin-bottom: 30px">
               <h2 class="h2_font">All Products</h2>
             </div>
@@ -46,7 +54,7 @@
                       <a href="{{route('edit_product',$product->id)}}" class="btn btn-success">Edit</a>
                     </td>
                     <td>
-                      <a href="" class="btn btn-danger">Delete</a>
+                      <a href="{{route('delete_product', $product->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
                   @endforeach

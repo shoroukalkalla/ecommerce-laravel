@@ -89,4 +89,10 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Product updated successfully');
     }
+
+    public function delete_product($id)
+    {
+        Product::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Product deleted successfully');
+    }
 }
