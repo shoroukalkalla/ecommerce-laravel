@@ -11,8 +11,8 @@
             <div class="box">
                <div class="option_container">
                   <div class="options">
-                     <a href="" class="option1">
-                     {{$product->title}}
+                     <a href="{{route('product_details', $product->id)}}" class="option1">
+                     Product Details
                      </a>
                      <a href="" class="option2">
                      Buy Now
@@ -20,7 +20,7 @@
                   </div>
                </div>
                <div class="img-box">
-                  <img src="/product/{{$product->image}}" alt="">
+                  <img src="/product/{{$product->image}}">
                </div>
                <div class="detail-box">
                   <h5>
@@ -52,7 +52,8 @@
        
        <div class="d-flex justify-content-center m-auto" style="margin-top: 20px !important">
          {!! $products->links() !!}
-     </div>
+       </div>
 
     </div>
  </section>
+

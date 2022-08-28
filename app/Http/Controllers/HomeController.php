@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -23,5 +22,11 @@ class HomeController extends Controller
         } else {
             $products = Product::paginate(3);
             return view('home.userpage', compact('products'));}
+    }
+
+    public function product_details($id)
+    {
+        $product = Product::find($id);
+        return view('home.product_details', compact('product'));
     }
 }

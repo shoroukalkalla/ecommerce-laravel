@@ -26,8 +26,9 @@ Route::middleware([
 });
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/redirect', 'redirect');
+    Route::get('/', 'index')->name('/');
+    Route::get('/redirect', 'redirect')->name('/redirect');
+    Route::get('/product_details/{id}', 'product_details')->name('product_details');
 });
 
 Route::controller(AdminController::class)->group(function () {
