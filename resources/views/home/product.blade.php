@@ -14,9 +14,9 @@
                      <a href="{{route('product_details', $product->id)}}" class="option1">
                      Product Details
                      </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
+                     
+                     @include('home.add_to_cart_form')
+
                   </div>
                </div>
                <div class="img-box">

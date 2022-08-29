@@ -29,6 +29,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('/');
     Route::get('/redirect', 'redirect')->name('/redirect');
     Route::get('/product_details/{id}', 'product_details')->name('product_details');
+    Route::post('/add_to_card/{id}', 'add_to_card')->name('add_to_card');
 });
 
 Route::controller(AdminController::class)->group(function () {

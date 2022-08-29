@@ -34,6 +34,9 @@
                     <p class="card-text"><small><b>Description: </b> {{$product->description}}</small></p>
                     <p class="card-text"><small><b>Quantity: </b> {{$product->quantity}}</small></p>
                     <p class="card-text"><small><b>Catgeory: </b> {{$product->category->category_name}}</small></p>
+                    
+                    @include('home.add_to_cart_form')
+
                   </div>
                 </div>
               </div>
