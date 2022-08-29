@@ -32,7 +32,7 @@ class HomeController extends Controller
         return view('home.product_details', compact('product'));
     }
 
-    public function add_to_card(Request $request, $id)
+    public function add_to_cart(Request $request, $id)
     {
         if (Auth::id()) {
             $user = Auth::user();
@@ -55,5 +55,22 @@ class HomeController extends Controller
         } else {
             return redirect('login');
         }
+    }
+
+    public function show_cart()
+    {
+        if (Auth::id()) {
+            $id = Auth::user()->id;
+            $cart = Cart::where('user_id', $id)->get();
+            return view('home.show_cart', compact('cart'));
+        } else {
+            return redirect('login');
+        }
+    }
+
+    public function remove_cart($id)
+    {
+        Cart::find($id)->delete();
+        return redirect()->back();
     }
 }

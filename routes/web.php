@@ -28,8 +28,12 @@ Route::middleware([
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('/');
     Route::get('/redirect', 'redirect')->name('/redirect');
+
     Route::get('/product_details/{id}', 'product_details')->name('product_details');
-    Route::post('/add_to_card/{id}', 'add_to_card')->name('add_to_card');
+
+    Route::post('/add_to_cart/{id}', 'add_to_cart')->name('add_to_cart');
+    Route::get('/show_cart', 'show_cart')->name('show_cart');
+    Route::get('/remove_cart/{id}', 'remove_cart')->name('remove_cart');
 });
 
 Route::controller(AdminController::class)->group(function () {

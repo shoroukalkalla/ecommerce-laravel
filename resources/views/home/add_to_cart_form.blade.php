@@ -1,4 +1,4 @@
-<form action="{{route('add_to_card',$product->id)}}" method="POST">
+<form action="{{route('add_to_cart',$product->id)}}" method="POST">
     @csrf
     <div class="row mt-3">
 
