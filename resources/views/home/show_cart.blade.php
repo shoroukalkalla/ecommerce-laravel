@@ -57,7 +57,7 @@
         <h1 style="display:flex; justify-content:center; font-size:25px; padding:20px">Proceed To Order</h1>
         <div style="display:flex; justify-content:center; margin-bottom:30px">
           <a href="{{route('cash_order')}}" class="btn btn-secondary" style="margin-right: 5px;">Cash On Delivery</a>
-          <a href="" class="btn btn-secondary" >Pay Using Card</a>
+          <a href="{{route('stripe',$totalPrice)}}" class="btn btn-secondary" >Pay Using Card</a>
         </div>
       </div>
       

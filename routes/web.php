@@ -36,6 +36,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/remove_cart/{id}', 'remove_cart')->name('remove_cart');
     Route::get('/cash_order', 'cash_order')->name('cash_order');
 
+    Route::get('/stripe/{totalPrice}', 'stripe')->name('stripe');
+    Route::post('stripe/{totalPrice}', 'stripePost')->name('stripe.post');
 });
 
 Route::controller(AdminController::class)->group(function () {
