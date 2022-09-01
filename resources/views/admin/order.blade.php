@@ -33,6 +33,7 @@
                           <th scope="col" class="text-warning" >Payment Status</th>
                           <th scope="col" class="text-warning" >Delivery Status</th>
                           <th scope="col" class="text-warning" >Image</th>
+                          <th scope="col" class="text-warning" >Delivered</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,17 @@
                         <td>
                             <img src="/product/{{$order->image}}">
                         </td>
+                        <td>
+                          @if ($order->delivery_status == 'Processing')
+                              
+                          <a href="{{route('delivered', $order->id)}}" class="btn btn-primary">Delivered</a>
+
+                          @else
+                          
+                          <p style="color: green">Delivered</p>
+
+                          @endif
+                      </td>
                       </tr>
                       @endforeach
                     </tbody>

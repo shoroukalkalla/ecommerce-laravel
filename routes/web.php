@@ -53,4 +53,5 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/delete_product/{id}', 'delete_product')->name('delete_product');
 
     Route::get('/order', 'order')->name('order');
+    Route::get('/delivered_order/{id}', 'delivered')->name('delivered');
 });
