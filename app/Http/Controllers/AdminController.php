@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -94,5 +95,11 @@ class AdminController extends Controller
     {
         Product::where('id', $id)->delete();
         return redirect()->back()->with('success', 'Product deleted successfully');
+    }
+
+    public function order()
+    {
+        $orders = Order::all();
+        return view('admin.order', compact('orders'));
     }
 }
