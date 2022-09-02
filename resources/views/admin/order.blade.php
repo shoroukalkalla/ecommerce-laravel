@@ -63,7 +63,7 @@
                           @endif
                       </td>
                       <td>
-                        <a href="" class="btn btn-secondary">Print</a>
+                        <a href="{{route('print_pdf',$order->id)}}" class="btn btn-secondary">Print</a>
                       </td>
                       </tr>
                       @endforeach
