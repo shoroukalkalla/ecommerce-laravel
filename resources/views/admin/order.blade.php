@@ -19,10 +19,9 @@
                     <h2 class="h2_font">All Orders</h2>
                 </div>
 
-                <table class="table m-auto font-monospace text-center text-light">
+                <table class="table font-monospace text-center text-light">
                     <thead>
                         <tr>
-                          <th scope="col" class="text-warning" >ID</th>
                           <th scope="col" class="text-warning" >Username</th>
                           <th scope="col" class="text-warning" >Email</th>
                           <th scope="col" class="text-warning" >Address</th>
@@ -34,12 +33,12 @@
                           <th scope="col" class="text-warning" >Delivery Status</th>
                           <th scope="col" class="text-warning" >Image</th>
                           <th scope="col" class="text-warning" >Delivered</th>
+                          <th scope="col" class="text-warning" >PDF</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)             
                       <tr>
-                        <th scope="row">{{$order->id}}</th>
                         <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>
                         <td>{{$order->address}}</td>
@@ -62,6 +61,9 @@
                           <p style="color: green">Delivered</p>
 
                           @endif
+                      </td>
+                      <td>
+                        <a href="" class="btn btn-secondary">Print</a>
                       </td>
                       </tr>
                       @endforeach
