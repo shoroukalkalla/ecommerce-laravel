@@ -54,5 +54,7 @@ Route::controller(AdminController::class)->group(function () {
 
     Route::get('/order', 'order')->name('order');
     Route::get('/delivered_order/{id}', 'delivered')->name('delivered');
+
     Route::get('/print_pdf/{id}', 'print_pdf')->name('print_pdf');
+    Route::get('/send_email/{id}', 'send_email')->name('send_email');
 });

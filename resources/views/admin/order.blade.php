@@ -19,7 +19,7 @@
                     <h2 class="h2_font">All Orders</h2>
                 </div>
 
-                <table class="table font-monospace text-center text-light">
+                <table class="table font-monospace float-right text-center text-light">
                     <thead>
                         <tr>
                           <th scope="col" class="text-warning" >Username</th>
@@ -34,6 +34,7 @@
                           <th scope="col" class="text-warning" >Image</th>
                           <th scope="col" class="text-warning" >Delivered</th>
                           <th scope="col" class="text-warning" >PDF</th>
+                          <th scope="col" class="text-warning" >Send Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +65,9 @@
                       </td>
                       <td>
                         <a href="{{route('print_pdf',$order->id)}}" class="btn btn-secondary">Print</a>
+                      </td>
+                      <td>
+                        <a href="{{route('send_email', $order->id)}}" class="btn btn-info">Send Email</a>
                       </td>
                       </tr>
                       @endforeach
