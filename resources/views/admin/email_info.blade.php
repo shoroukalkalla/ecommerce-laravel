@@ -20,30 +20,31 @@
                     <h2 class="h2_font">Send Email To {{$order->email}}</h2>
                 </div>
 
-                <form action="" class="m-auto w-50">
+                <form action="{{route('send_user_email', $order->id)}}" method="POST" class="m-auto w-50">
+                  @csrf
                         <div class="mb-3">
                           <label class="form-label">Email Greeting: </label>
-                          <input type="text" class="form-control" name="greeting">
+                          <input type="text" class="form-control input_color" name="greeting">
                         </div>
                         <div class="mb-3">
                           <label class="form-label">Email FirstLine: </label>
-                          <input type="text" class="form-control" name="firstline">
+                          <input type="text" class="form-control input_color" name="firstline">
                         </div>
                         <div class="mb-3">
                           <label class="form-label">Email Body: </label>
-                          <input type="text" class="form-control" name="body">
+                          <input type="text" class="form-control input_color" name="body">
                         </div>
                         <div class="mb-3">
                           <label class="form-label">Email Button Name: </label>
-                          <input type="text" class="form-control" name="button_name">
+                          <input type="text" class="form-control input_color" name="button">
                         </div>
                         <div class="mb-3">
                           <label class="form-label">Email URL: </label>
-                          <input type="text" class="form-control" name="url">
+                          <input type="text" class="form-control input_color" name="url">
                         </div>
                         <div class="mb-3">
                           <label class="form-label">Email LastLine: </label>
-                          <input type="text" class="form-control" name="lastline">
+                          <input type="text" class="form-control input_color" name="lastline">
                         </div>
                         <div class="text-center">
                             <input type="submit" value="Send Email" class="btn btn-primary">

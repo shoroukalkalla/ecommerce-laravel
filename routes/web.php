@@ -57,4 +57,5 @@ Route::controller(AdminController::class)->group(function () {
 
     Route::get('/print_pdf/{id}', 'print_pdf')->name('print_pdf');
     Route::get('/send_email/{id}', 'send_email')->name('send_email');
+    Route::post('/send_user_email/{id}', 'send_user_email')->name('send_user_email');
 });
