@@ -15,11 +15,19 @@
             <div class="content-wrapper">
 
                 
-                <div class="div_center" style="margin-bottom: 30px">
+                <div class="div_center" style="margin-bottom: 15px">
                     <h2 class="h2_font">All Orders</h2>
                 </div>
 
-                <table class="table font-monospace float-right text-center text-light">
+                <div class="text-center" style="margin-bottom: 25px">
+                  <form action="{{route('search')}}" method="GET">
+                    @csrf
+                    <input type="text" name="search" placeholder="Search Quick.." class="input_color">
+                    <input type="submit" value="Search" class="btn btn-outline-primary">
+                  </form>
+                </div>
+
+                <table class="table font-monospace float-left text-center text-light">
                     <thead>
                         <tr>
                           <th scope="col" class="text-warning" >Username</th>
