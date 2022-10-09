@@ -46,7 +46,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($orders as $order)             
+
+                        @forelse ($orders as $order)
+                                        
                       <tr>
                         <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>
@@ -78,7 +80,13 @@
                         <a href="{{route('send_email', $order->id)}}" class="btn btn-info">Send Email</a>
                       </td>
                       </tr>
-                      @endforeach
+                      @empty
+                      <tr>
+                        <td colspan="16">
+                          No Data Found
+                        </td>
+                      </tr>
+                      @endforelse
                     </tbody>
                   </table>
             </div>
