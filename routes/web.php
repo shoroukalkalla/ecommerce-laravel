@@ -33,8 +33,10 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::post('/add_to_cart/{id}', 'add_to_cart')->name('add_to_cart');
     Route::get('/show_cart', 'show_cart')->name('show_cart');
+    Route::get('/show_order', 'show_order')->name('show_order');
     Route::get('/remove_cart/{id}', 'remove_cart')->name('remove_cart');
     Route::get('/cash_order', 'cash_order')->name('cash_order');
+    Route::get('/cancel_order/{id}', 'cancel_order')->name('cancel_order');
 
     Route::get('/stripe/{totalPrice}', 'stripe')->name('stripe');
     Route::post('stripe/{totalPrice}', 'stripePost')->name('stripe.post');
